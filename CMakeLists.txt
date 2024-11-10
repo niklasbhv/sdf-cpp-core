@@ -32,7 +32,7 @@ target_include_directories(${PROJECT_NAME}
 )
 
 # Link additional libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(${PROJECT_NAME} PUBLIC nlohmann_json::nlohmann_json)
 
 # Set properties (versioning and compatibility)
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -59,7 +59,7 @@ install(TARGETS nlohmann_json
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/helper_library
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/nlohmann_json
 )
 
 # Install the export configuration for other CMake projects to use this library
